@@ -1,14 +1,18 @@
 import React from "react"
 import Header from "./components/Header/Header"
-import {BrowserRouter, Router, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Navbar from "./components/Navbar/Navbar";
+import Inicio from "./components/Inicio/Inicio";
 
 function App(){
     return(
         <>
+            <Header />
             <BrowserRouter>
-                <Header />
                 <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Inicio />} />                        
+                    </Routes>
             </BrowserRouter>
         </>
     )

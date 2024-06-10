@@ -70,3 +70,36 @@
     top:-2.7rem;
     left:5rem
 }
+
+.navInstrucciones{
+    margin: 0 auto;    
+    width:23rem
+}
+
+.navOpciones , .navInstrucciones{
+    color: #72FFDD;
+    font-size: 1.85rem;
+}
+
+.opcionesG{
+    display: flex;
+    flex-wrap: wrap;
+    align-content:space-evenly;
+    justify-content:center;
+}
+
+.opcionesGleft1{
+    margin-right: 6rem;
+}
+
+.opcionesGleft2{
+    margin-right: 7.9rem;
+}
+
+li{
+    list-style-type: none;
+}
+
+.opcionesRadio{
+    margin-right: 1rem;
+}
