@@ -1,0 +1,72 @@
+.miNav{
+    height:35rem;
+    background-color: rgb(46, 27, 2);
+    text-align: center;
+    position:relative
+}
+
+.navModeContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-content:space-evenly;
+    justify-content:center;
+}
+
+.navButtonChoice1{
+  background: #000000;
+  box-shadow: #55ab0e 0 -10px 5px inset;
+  color: #d9c78d;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 1rem 1rem 1rem 1rem;
+  border-radius: 20%;
+  letter-spacing: 0.1rem;
+  padding: 1rem 0.2rem;
+  transition: 0.4s;
+  width: 8rem;
+}
+
+.navButtonChoice1:hover {
+  transform: scale(1.2);
+  color: rgb(0, 162, 255);
+  animation: box 3s infinite;
+}
+
+.navButtonChoice2{
+  background: #000000;
+  box-shadow: #55ab0e 0 -10px 5px inset;
+  color: #d9c78d;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 1rem 1rem 1rem 1rem;
+  border-radius: 20%;
+  letter-spacing: 0.1rem;
+  padding: 1rem 0.2rem;
+  transition: 0.4s;
+  width:8rem;
+  left:0
+}
+
+.navButtonChoice2:hover {
+  transform: scale(1.2);
+  color: rgb(0, 162, 255);
+  animation: box 3s infinite;
+}
+
+.navSearch{
+    height:3rem;
+    width:15rem;
+    border-radius: 30%;
+    display: flex;
+    margin: 0 auto;
+    background-color: #FC9F9F;
+    text-align: center;
+}
+.navSearchLupa{
+    position: relative;
+    width: 2.5rem;
+    top:-2.7rem;
+    left:5rem
+}
