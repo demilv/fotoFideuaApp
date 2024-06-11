@@ -1,0 +1,18 @@
+.coleccionFotos{
+    background-color: rgb(148, 143, 136);
+    padding-top: 2rem;
+}
+
+@media only screen and (min-width: 700px){
+    .coleccionFotos{
+        display:block;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .coleccionFotos{
+        display:block;
+        column-count: 3;
+    }
+}

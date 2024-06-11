@@ -5,7 +5,7 @@ const Favoritos = () => {
 
     return(
         <>
-            
+            <p>Hola!</p>
         </>
     )
 }

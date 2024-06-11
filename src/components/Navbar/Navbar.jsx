@@ -1,27 +1,38 @@
 import React from "react"
 import "./Navbar.css"
 import { useState, useEffect } from "react"
+import { searchStatusSelect, searchDataSelect, searchErrorSelect } from "../../features/search/searchSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { searchThunk } from "../../features/search/searchThunk"
+import { useNavigate } from "react-router-dom"
 
-const Navbar = () => {
-    const [search,setSearch] = useState(false)
+const Navbar = ({search, handlerChoice}) => {
+    const [isLoading, setIsLoading] = useState(false)
+    const searchStatus = useSelector(searchStatusSelect)
+    const searchData = useSelector(searchDataSelect)
+    const searchError = useSelector(searchErrorSelect)
+    const dispatch = useDispatch()
 
-    useEffect(() => {
-        console.log("me cambie")
-    }, [search])
-
-    const handlerChoice = (choice) =>{
-        if (choice === "Inicio"){
-            setSearch(false)
-        }else if(choice === "Favoritos"){
-            setSearch(true)
+    useEffect(() =>{
+        if (searchStatus==="idle"){
+            dispatch(searchThunk())
         }
-    }
+        else if (searchStatus==="pending"){
+            setIsLoading(true)
+        }
+        else if (searchStatus === "fulfilled"){
+            setIsLoading(false)
+            console.log(searchData)
+        }
+    }, [searchStatus])
+
+    const navigate = useNavigate()
 
     return(
        <nav className="miNav">
             <div className="navModeContainer">
-                <button className="navButtonChoice1" onClick={() => handlerChoice("Inicio")}>Nuestra Fideua de fotos</button>
-                <button className="navButtonChoice2" onClick={() => handlerChoice("Favoritos")}>Tu coleccion de imágenes</button>
+                <button className="navButtonChoice1" onClick={() => navigate("/")}>Nuestra Fideua de fotos</button>
+                <button className="navButtonChoice2" onClick={() => navigate("/favoritos")}>Tu coleccion de imágenes</button>
             </div>
             <input className="navSearch"></input>
             <img className="navSearchLupa" src="../../../public/lupa.png" alt="lupa.png"></img>
