@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react"
 import Imagen from "../Imagen/Imagen"
 import { searchDataSelect, searchStatusSelect, searchErrorSelect } from "../../features/search/searchSlice"
-import { searchThunk } from "../../features/search/searchThunk";
+import { searchThunk} from "../../features/search/searchThunk";
 
 const Inicio = () => {
     const [images, setImages] = useState([])
