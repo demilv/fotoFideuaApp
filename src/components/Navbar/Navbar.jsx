@@ -19,13 +19,8 @@ const Navbar = () => {
     useEffect(() => {
         if (searchStatus === 'idle') {
             dispatch(searchThunk());
-        } else if (searchStatus === 'pending') {
-            setIsLoading(true);
-        } else if (searchStatus === 'fulfilled') {
-            setIsLoading(false);
-            console.log(searchData);
         }
-    }, [searchStatus]);
+    }, []);
 
     const navigate = useNavigate();
 

@@ -14,6 +14,10 @@ const Inicio = () => {
     const searchError = useSelector(searchErrorSelect)
     const [loading, setLoading] = useState(true);
 
+    useEffect(()=>{
+      dispatch(searchThunk());
+    }, [])
+
     const showImgs = () => {
         return images.map((image, index) => {
           return <Imagen key={index} src={image.src}  id={image.id} alt={image.alt} height={image.height} width={image.width} likes={image.likes} created={image.created}/>

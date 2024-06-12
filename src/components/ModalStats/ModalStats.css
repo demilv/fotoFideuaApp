@@ -1,0 +1,66 @@
+.over9000 {
+  position: fixed;
+  display:flex;
+  flex-direction: row;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border: 0.3rem solid black;
+  padding: 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+  background-color: rgb(87, 70, 182);
+}
+  
+  .over9000CloseButton {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .over9000EditsDescription {
+    margin-top: 15%;
+    width: 100%;
+    height:50%;
+    height: 10rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .over9000Stats {
+    margin-left: 15%;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .over9000Stats li{
+    margin-top: 22%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white
+  }
+
+  .over9000EditsButton{
+    background-color: cornflowerblue;
+    color:white;
+    font-size: 1.1rem;
+    border-radius: 10%;
+    height:2rem;
+    width: 45%;
+    margin-left: 25%;
+    margin-top: 10%;
+    transition:ease-in, 1s
+  }
+
+  .over9000EditsButton:hover{
+    color: green;
+    width:50%;
+    height:12%;
+  }

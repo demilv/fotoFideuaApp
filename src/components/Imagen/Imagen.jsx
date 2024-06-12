@@ -1,30 +1,59 @@
-import './Imagen.css'
-import React from "react"
+import './Imagen.css';
+import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { saveAs } from 'file-saver';
+import { useDispatch } from 'react-redux';
+import { addFavourites, removeFavourites } from '../../features/favourites/favouritesSlice';
+import ModalStats from '../ModalStats/ModalStats'
 
+const Imagen = ({ src, id, alt, height, width, likes, created, isFavourite }) => {
+  const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
+  const handleDownload = () => {
+    saveAs(src, `${id}.jpg`);
+  };
 
-const Imagen = ({src, id, alt, height, width, likes, created}) => {
+  const handleFavorito = () => {
+    dispatch(addFavourites({ src, id, alt, height, width, likes, created }));
+  };
 
-    const handleDownload = () => {
-        //console.log("te descargas?")
-        saveAs(src, `${id}.jpg`);
-    }
+  const handleRemove = () => {
+    dispatch(removeFavourites({ id }));
+  };
 
-    const handleFavorito = () => {
-        console.log("Aun no")
-    }
+  const showPopUp = () => {
+    setIsModalOpen(true)
+  }
 
-    return(
-        <div className="imagen" id={id}>
-            <img src={src} alt= {alt} />
-            <FontAwesomeIcon className="iconDownload" icon={faDownload} onClick={handleDownload} />
-            <FontAwesomeIcon className="iconStar" icon={faStar} onClick={handleFavorito}/>
-        </div>
-    )
-}
+  const closePopUp = () =>{
+    setIsModalOpen(false)
+  }
 
-export default Imagen
+  return (
+    <div className="imagen" id={id}>
+      <img src={src} alt={alt} />
+      <FontAwesomeIcon className="iconDownload" icon={faDownload} onClick={handleDownload} />
+      {isFavourite ? (
+        <>
+            <FontAwesomeIcon className="iconTrash" icon={faTrash} onClick={handleRemove} />
+            <button className="botonEdit" onClick={showPopUp}>Editar Descripción</button>
+            <ModalStats
+                isOpen={isModalOpen}
+                onClose={closePopUp}
+                description={alt}
+                width={width}
+                height={height}
+                likes={likes}
+                date={created}
+            />
+        </>
+      ) : (
+        <FontAwesomeIcon className="iconStar" icon={faStar} onClick={handleFavorito} />
+      )}
+    </div>
+  );
+};
+
+export default Imagen;

@@ -1,0 +1,18 @@
+.fotosFavoritas{
+    background-color: rgb(148, 143, 136);
+    padding-top: 2rem;
+}
+
+@media only screen and (min-width: 700px){
+    .fotosFavoritas{
+        display:block;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .fotosFavoritas{
+        display:block;
+        column-count: 3;
+    }
+}
