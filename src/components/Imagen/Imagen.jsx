@@ -7,11 +7,11 @@ import { saveAs } from 'file-saver';
 
 
 
-const Imagen = ({source, description, id, height, width, likes, created}) => {
+const Imagen = ({src, id, alt, height, width, likes, created}) => {
 
     const handleDownload = () => {
         //console.log("te descargas?")
-        saveAs(source, `${id}.jpg`);
+        saveAs(src, `${id}.jpg`);
     }
 
     const handleFavorito = () => {
@@ -20,7 +20,7 @@ const Imagen = ({source, description, id, height, width, likes, created}) => {
 
     return(
         <div className="imagen" id={id}>
-            <img src={source} alt= "otra imagen" />
+            <img src={src} alt= {alt} />
             <FontAwesomeIcon className="iconDownload" icon={faDownload} onClick={handleDownload} />
             <FontAwesomeIcon className="iconStar" icon={faStar} onClick={handleFavorito}/>
         </div>

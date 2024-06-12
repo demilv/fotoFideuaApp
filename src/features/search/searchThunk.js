@@ -9,7 +9,7 @@ export const searchThunk = createAsyncThunk("search/getInitialSearch", async() =
 })
 
 export const searchQueryThunk= createAsyncThunk("search/getQuerySearch", async(query) =>{
-    const request = await fetch(`https://api.unsplash.com/search/photos?count=8&query=${query}&client_id=${import.meta.env.VITE_ACCESS_KEY}`);
+    const request = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=${import.meta.env.VITE_API_KEY}`);
     const data = await request.json();
     return data.results;
 })

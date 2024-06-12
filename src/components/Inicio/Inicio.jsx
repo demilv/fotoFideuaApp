@@ -16,7 +16,7 @@ const Inicio = () => {
 
     const showImgs = () => {
         return images.map((image, index) => {
-          return <Imagen key={index} source={image.source} description={image.alt} id={image.id} height={image.height} width={image.width} likes={image.likes} created={image.created}/>
+          return <Imagen key={index} src={image.src}  id={image.id} alt={image.alt} height={image.height} width={image.width} likes={image.likes} created={image.created}/>
         })
       }
 
@@ -29,7 +29,7 @@ const Inicio = () => {
           setLoading(false);
           let data = [];
           searchData.forEach((image) => {
-            data.push({source: image.urls.regular, alt: image.alt_description, id: image.id, height: image.height, width: image.width, likes: image.likes, created: image.created_at});
+            data.push({src: image.urls.regular, id: image.id, alt: image.alt_description,  height: image.height, width: image.width, likes: image.likes, created: image.created_at});
           })
           setImages(data);
         } else if (searchStatus === "rejected") {
