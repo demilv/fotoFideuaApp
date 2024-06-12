@@ -42,6 +42,7 @@ const Imagen = ({ src, id, alt, height, width, likes, created, isFavourite }) =>
             <ModalStats
                 isOpen={isModalOpen}
                 onClose={closePopUp}
+                id = {id}
                 description={alt}
                 width={width}
                 height={height}
