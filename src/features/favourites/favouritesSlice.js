@@ -2,14 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const loadState = () => {
     try {
-        const serializedState = localStorage.getItem("favourites");
-        if (serializedState === null) {
+        const startState = localStorage.getItem("favourites");
+        if (startState === null) {
             return { data: [], status: 'idle', error: null, filteredData: [] };
         }
-        return { data: JSON.parse(serializedState), status: 'idle', error: null, filteredData: [] };
+        return { data: JSON.parse(startState), status: 'idle', error: null, filteredData: [] };
     } catch (err) {
         return { data: [], status: 'idle', error: null, filteredData: [] };
     }
+};
+
+const orderChoice = {
+    width: (a, b) => a.width - b.width,
+    created: (a, b) => new Date(a.created) - new Date(b.created),
+    height: (a, b) => a.height - b.height,
+    likes: (a, b) => a.likes - b.likes,
 };
 
 export const favouritesSlice = createSlice({
@@ -43,9 +50,28 @@ export const favouritesSlice = createSlice({
                 state.filteredData = state.data.filter(item => item.alt.toLowerCase().includes(query));
             }
         },
+        orderTypeFavourites: (state, action) => {
+            state.orderType = action.payload.orderType;
+            let copiaToSort = [...(state.filteredData.length > 0 ? state.filteredData : state.data)];
+            if (state.orderType !== "") {
+                copiaToSort.sort(orderChoice[state.orderType]);
+                if (state.filteredData.length > 0) {
+                    state.filteredData = copiaToSort;
+                } else {
+                    state.data = copiaToSort;
+                }
+            }            
+            if (state.orderType === "") {
+                if (state.filteredData.length > 0) {
+                    state.filteredData = [...state.data]; 
+                } else {
+                    state.data = loadState().data; 
+                }
+            }
+        },
     },
 });
 
-export const { addFavourites, removeFavourites, editFavourites, searchFavourites } = favouritesSlice.actions;
+export const { addFavourites, removeFavourites, editFavourites, searchFavourites, orderTypeFavourites } = favouritesSlice.actions;
 
 export default favouritesSlice.reducer;

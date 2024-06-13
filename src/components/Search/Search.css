@@ -10,6 +10,7 @@
     border-radius: 30%;
     display: flex;
     margin: 0 auto;
+    margin-top: 2rem;
     background-color: #FC9F9F;
     text-align: center;
 }
