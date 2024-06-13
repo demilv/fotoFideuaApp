@@ -7,6 +7,7 @@ import { searchThunk, searchQueryThunk } from '../../features/search/searchThunk
 import { useNavigate } from 'react-router-dom';
 import Search from '../Search/Search';
 import OrderOptions from '../Order/Order';
+import { searchFavourites } from '../../features/favourites/favouritesSlice';
 
 const Navbar = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -28,8 +29,12 @@ const Navbar = () => {
         if (searchResult.trim() === '') {
             dispatch(searchThunk());
         } else {
-            dispatch(searchQueryThunk(`${searchResult}`));
+            dispatch(searchQueryThunk(searchResult));
         }
+    };
+
+    const handleCheckFav = () => {
+        dispatch(searchFavourites(searchResult));
     };
 
     return (
@@ -38,7 +43,7 @@ const Navbar = () => {
                 <button className="navButtonChoice1" onClick={() => navigate('/')}>Nuestra Fideua de fotos</button>
                 <button className="navButtonChoice2" onClick={() => navigate('/favoritos')}>Tu coleccion de imágenes</button>
             </div>
-            <Search setSearchResult={setSearchResult} handleCheck={handleCheck} />
+            <Search setSearchResult={setSearchResult} handleCheck={handleCheck} handleCheckFav={handleCheckFav}/>
             <OrderOptions />
         </nav>
     );

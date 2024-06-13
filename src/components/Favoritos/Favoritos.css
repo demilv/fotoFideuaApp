@@ -3,7 +3,7 @@
     padding-top: 2rem;
 }
 
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 600px){
     .fotosFavoritas{
         display:block;
         column-count: 2;
