@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { searchStatusSelect, searchDataSelect, searchErrorSelect } from '../../features/search/searchSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchThunk, searchQueryThunk } from '../../features/search/searchThunk';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation} from 'react-router-dom';
 import Search from '../Search/Search';
 import OrderOptions from '../Order/Order';
 import { searchFavourites } from '../../features/favourites/favouritesSlice';
@@ -24,6 +24,7 @@ const Navbar = () => {
     }, []);
 
     const navigate = useNavigate();
+    const location = useLocation()
 
     const handleCheck = () => {
         if (searchResult.trim() === '') {
@@ -42,6 +43,8 @@ const Navbar = () => {
             <div className="navModeContainer">
                 <button className="navButtonChoice1" onClick={() => navigate('/')}>Nuestra Fideua de fotos</button>
                 <button className="navButtonChoice2" onClick={() => navigate('/favoritos')}>Tu coleccion de imágenes</button>
+                {location.pathname === "/favoritos"  && <button className="navButtonChoice3" onClick={() => navigate('/')}>Vuelve a Fideua</button>}
+                {location.pathname === "/"  && <button className="navButtonChoice3" onClick={() => navigate('/favoritos')}>Vuelve a tus imágenes</button>}
             </div>
             <Search setSearchResult={setSearchResult} handleCheck={handleCheck} handleCheckFav={handleCheckFav}/>
             <OrderOptions />

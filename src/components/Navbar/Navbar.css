@@ -54,3 +54,25 @@
     color: rgb(0, 162, 255);
     animation: box 3s infinite;
 }
+
+.navButtonChoice3{
+    position: fixed;
+    top: 90%;
+    left: 85%;
+    z-index: 10;
+    background: #000000;
+    box-shadow: #55ab0e 0 -10px 5px inset;
+    color: #d9c78d;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 50%; 
+    border: 2px solid #F5CBA7; 
+    width: 5.5rem; 
+    height: 5.5rem; 
+}
+
+.navButtonChoice3:hover{
+    transform: scale(1.2);
+    color: rgb(0, 162, 255);
+    animation: box 1s infinite;    
+}
