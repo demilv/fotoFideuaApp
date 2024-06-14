@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Navbar from "./components/Navbar/Navbar";
 import Inicio from "./components/Inicio/Inicio";
 import Favoritos from "./components/Favoritos/Favoritos";
+import Footer from "./components/Footer/Footer";
 
 function App(){    
 
@@ -17,6 +18,7 @@ function App(){
                         <Route path="/favoritos" element={<Favoritos />} />                   
                     </Routes>
             </BrowserRouter>
+            <Footer />
         </>
     )
 }
