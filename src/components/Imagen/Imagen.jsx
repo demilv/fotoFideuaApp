@@ -21,6 +21,7 @@ const Imagen = ({ src, id, alt, height, width, likes, created, isFavourite }) =>
 
   const handleRemove = () => {
     dispatch(removeFavourites({ id }));
+    window.location.reload();
   };
 
   const showPopUp = () => {
