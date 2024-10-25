@@ -1,6 +1,12 @@
 .fotosFavoritas{
-    background-color: rgb(148, 143, 136);
+    background-color: rgb(56, 53, 49);
     padding-top: 2rem;
+    border-radius: 3.125em;
+}
+
+.wrapperFotosFavoritas{
+    background-color: rgb(108, 108, 108);
+    padding: 0 5%;
 }
 
 @media only screen and (min-width: 600px){

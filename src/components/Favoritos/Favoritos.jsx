@@ -13,10 +13,12 @@ const Favoritos = () => {
   });
 
   return (
-    <div className="fotosFavoritas">
-      {favourites.map((favourite) => (
-        <Imagen key={favourite.id} {...favourite} isFavourite />
-      ))}
+    <div className="wrapperFotosFavoritas">
+      <article className="fotosFavoritas">
+        {favourites.map((favourite) => (
+          <Imagen key={favourite.id} {...favourite} isFavourite />
+        ))}
+      </article>
     </div>
   );
 };
