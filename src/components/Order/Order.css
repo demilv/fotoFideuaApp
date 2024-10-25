@@ -1,8 +1,9 @@
 .orderOptionsContainer {
-    color: #ffd1d1;
+    color: #668001;
     font-size: 1.85rem;
     text-align: center;
-    margin-top: 1rem;
+    font-weight: 700;
+
 }
 
 .navInstrucciones {
@@ -21,7 +22,6 @@
     flex-wrap: wrap;
     align-content: space-evenly;
     justify-content: center;
-    margin-top: 1rem;
 }
 
 .opcionesGleft1 {
@@ -51,7 +51,7 @@ li {
     text-decoration: none;
     text-transform: uppercase;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin: 1rem;
+    margin: 0 1em;
     border-radius: 3em;
     letter-spacing: 0.1rem;
     padding: 1rem 0.2rem;

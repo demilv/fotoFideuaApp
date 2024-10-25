@@ -26,15 +26,14 @@ const OrderOptions = () => {
         <>
             {location.pathname === "/favoritos" ? (
                 <div className="orderOptionsContainer">
-                    <h3 className="navInstrucciones">Ordena tus fotos</h3>                        
                     <ul className="navOpciones">
                         <div className="opcionesG">
                             <select className="opcionesSelect" name="ordenar" id="ordenar" onChange={handleOrderChange}>
+                                <option value="">Sin orden</option>
                                 <option value="width">Anchura</option>
                                 <option value="created">Fecha</option>
                                 <option value="height">Altura</option>
                                 <option value="likes">Likes</option>
-                                <option value="">Sin orden</option>
                             </select>
                         </div>
                     </ul>
