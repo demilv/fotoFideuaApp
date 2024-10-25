@@ -1,8 +1,9 @@
 .miNav {
     height: 37rem;
-    background-color: rgb(46, 27, 2);
+    background-color: rgb(108, 108, 108);
     text-align: center;
     position: relative;
+    padding: 0 5%;
 }
 
 .navModeContainer {

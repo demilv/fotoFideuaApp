@@ -43,6 +43,7 @@ const Inicio = () => {
       }, [dispatch, searchData, searchStatus, searchError]);
 
     return(
+      <div className="wrapperFotos">
         <article className="coleccionFotos">
             {loading ? 
             <p>Wait a moment, please</p> 
@@ -50,6 +51,7 @@ const Inicio = () => {
             showImgs()
             }
         </article>          
+      </div>
     )
 }
 
