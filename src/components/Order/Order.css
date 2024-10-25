@@ -43,3 +43,24 @@ li {
 .opcionesRadio {
     margin-right: 1rem;
 }
+
+.opcionesSelect {
+    background: #000000;
+    box-shadow: #55ab0e 0 -10px 5px inset;
+    color: #d9c78d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 1rem;
+    border-radius: 3em;
+    letter-spacing: 0.1rem;
+    padding: 1rem 0.2rem;
+    transition: 0.4s;
+    width: 8rem;
+    left: 0;
+}
+
+.opcionesSelect:hover {
+    color: rgb(0, 162, 255);
+    animation: box 3s infinite;
+}
